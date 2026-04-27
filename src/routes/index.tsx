@@ -1,26 +1,36 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { SiteHeader } from "@/components/site/SiteHeader";
+import { SiteFooter } from "@/components/site/SiteFooter";
+import { Hero } from "@/components/site/Hero";
+import { AutomationSection } from "@/components/site/AutomationSection";
+import { AISection } from "@/components/site/AISection";
+import { MLOpsSection } from "@/components/site/MLOpsSection";
+import { ComplianceSection } from "@/components/site/ComplianceSection";
+import { GuaranteesSection } from "@/components/site/GuaranteesSection";
+import { PricingSection } from "@/components/site/PricingSection";
+import { RoadmapSection } from "@/components/site/RoadmapSection";
+import { ContactSection } from "@/components/site/ContactSection";
 
 export const Route = createFileRoute("/")({
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
+function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background text-foreground">
+      <SiteHeader />
+      <main>
+        <Hero />
+        <AutomationSection />
+        <AISection />
+        <MLOpsSection />
+        <ComplianceSection />
+        <GuaranteesSection />
+        <PricingSection />
+        <RoadmapSection />
+        <ContactSection />
+      </main>
+      <SiteFooter />
     </div>
   );
-}
-
-function Index() {
-  return <PlaceholderIndex />;
 }
